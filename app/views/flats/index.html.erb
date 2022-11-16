@@ -1,0 +1,21 @@
+<div class="flat-container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col">
+        <div class="card mt-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: <%= flat.price_per_night %> EUR</li>
+            <li class="list-group-item">Address: <%= flat.address %></li>
+            <li class="list-group-item">Capacity: <%= flat.number_of_guests %> personne(s).</li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "More infos", flat_path(flat), class: "card-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="flat-container">
+  <div class="row">
+    <div class="col">
+      <div class="card mt-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= @flat.name %></h5>
+          <p class="card-text"><%= @flat.description %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Price: <%= @flat.price_per_night %> EUR</li>
+          <li class="list-group-item">Address: <%= @flat.address %></li>
+          <li class="list-group-item">Capacity: <%= @flat.number_of_guests %> personne(s).</li>
+        </ul>
+        <div class="card-body">
+          <%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-primary"%>
+          <%= link_to "Delete", flat_path(@flat), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
